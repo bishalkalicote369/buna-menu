@@ -1,0 +1,1 @@
+Put WebP photos here. See ../README.md for file names.
