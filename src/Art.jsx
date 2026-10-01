@@ -1,0 +1,15 @@
+// Hand-drawn fallback art so missing photos still look designed.
+const S={fill:'none',stroke:'#fbf7f0',strokeWidth:2.5,strokeLinecap:'round',strokeLinejoin:'round'};
+export default function Art({kind='cup',c='#c9a075'}){
+ const d={
+ cup:<><ellipse cx="100" cy="168" rx="70" ry="12" fill="#fbf7f0" opacity=".25"/><path d="M52 100h96v22a48 48 0 0 1-48 48 48 48 0 0 1-48-48z" fill="#fbf7f0"/><path d="M148 108h12a14 14 0 0 1 0 28h-16" {...S}/><ellipse cx="100" cy="100" rx="48" ry="9" fill={c}/><path d="M100 104c-14-8-8-14 0-9 8-5 14 1 0 9z" fill="#fbf7f0" opacity=".8"/><path d="M84 78c-8-10 8-14 0-26M104 78c-8-10 8-14 0-26M122 78c-8-10 8-14 0-26" {...S} opacity=".6"/></>,
+ bowl:<><path d="M36 100h128a64 64 0 0 1-128 0z" fill="#fbf7f0"/><ellipse cx="100" cy="100" rx="64" ry="12" fill={c}/><ellipse cx="100" cy="100" rx="40" ry="7" fill="none" stroke="#fbf7f0" strokeWidth="2" opacity=".6"/><path d="M80 164h40" {...S}/></>,
+ iced:<><path d="M60 60h80l-10 108H70z" fill="#fbf7f0" opacity=".3"/><path d="M64 92h72l-7 76H71z" fill={c}/><rect x="74" y="98" width="24" height="24" rx="5" fill="#fbf7f0" opacity=".55" transform="rotate(-12 86 110)"/><rect x="104" y="110" width="22" height="22" rx="5" fill="#fbf7f0" opacity=".45" transform="rotate(10 115 121)"/><path d="M118 20l-12 90" {...S}/></>,
+ juice:<><path d="M64 70h72l-8 98H72z" fill="#fbf7f0" opacity=".3"/><path d="M68 96h64l-6 72H74z" fill={c}/><circle cx="140" cy="76" r="22" fill={c} stroke="#fbf7f0" strokeWidth="4"/><path d="M140 54v44M118 76h44M124 60l32 32M156 60l-32 32" {...S} strokeWidth="1.5"/></>,
+ croissant:<><g fill={c} stroke="#fbf7f0" strokeWidth="2.5"><ellipse cx="100" cy="116" rx="26" ry="44"/><ellipse cx="68" cy="124" rx="18" ry="34" transform="rotate(35 68 124)"/><ellipse cx="132" cy="124" rx="18" ry="34" transform="rotate(-35 132 124)"/><ellipse cx="46" cy="140" rx="12" ry="24" transform="rotate(60 46 140)"/><ellipse cx="154" cy="140" rx="12" ry="24" transform="rotate(-60 154 140)"/></g><path d="M88 84v64M112 84v64" {...S} opacity=".5"/></>,
+ toast:<><path d="M42 80a30 30 0 0 1 36-22 30 30 0 0 1 44 0 30 30 0 0 1 36 22v82H42z" fill="#e9d2a8"/><path d="M58 96h84v54H58z" fill={c}/><circle cx="82" cy="116" r="9" fill="#fbf7f0" opacity=".6"/><circle cx="112" cy="130" r="11" fill="#fbf7f0" opacity=".45"/><circle cx="124" cy="106" r="7" fill="#fbf7f0" opacity=".6"/></>,
+ stack:<><g fill={c} stroke="#fbf7f0" strokeWidth="2.5"><ellipse cx="100" cy="150" rx="62" ry="16"/><ellipse cx="100" cy="128" rx="58" ry="15"/><ellipse cx="100" cy="106" rx="54" ry="14"/></g><path d="M64 100c20 14 22 40 36 30s10-30 40-24" fill="#7a3f1d" opacity=".85"/><rect x="88" y="86" width="24" height="14" rx="3" fill="#fbf7f0"/></>,
+ cake:<><path d="M36 150L100 56l64 94z" fill="#fbf7f0"/><path d="M52 126h96" stroke={c} strokeWidth="14"/><path d="M68 102h64" stroke={c} strokeWidth="10"/><circle cx="100" cy="50" r="9" fill={c} stroke="#fbf7f0" strokeWidth="3"/><ellipse cx="100" cy="160" rx="74" ry="9" fill="#fbf7f0" opacity=".3"/></>
+ };
+ return <svg viewBox="0 0 200 200" className="art" aria-hidden="true">{d[kind]||d.cup}</svg>;
+}
