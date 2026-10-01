@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BUNA — Coffee · Food · Tea · Fresh Drinks</title>
+<meta name="description" content="BUNA is a specialty café. Espresso, signature lattes, fresh food and pastries — explore the menu.">
+<meta property="og:title" content="BUNA — Coffee · Food · Tea · Fresh Drinks">
+<meta property="og:description" content="Specialty coffee, signature drinks and fresh food.">
+<meta property="og:image" content="assets/img/final/hero.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%232b211b'/%3E%3Ctext x='50' y='66' font-family='Georgia' font-size='52' fill='%23f6f1e8' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="preload" as="image" href="assets/img/final/hero.jpg" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"BUNA",
+ "servesCuisine":"Coffee, Brunch, Pastry","priceRange":"€"}
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="logo" href="#top" aria-label="BUNA home">BUNA</a>
+  <div class="topbar-right">
+    <button class="icon-btn" aria-label="Search menu" onclick="openSearch()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <img class="hero-img" src="assets/img/final/hero.jpg"
+       alt="Espresso in a hand-painted ceramic cup on a wooden table" fetchpriority="high">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Specialty Café</p>
+    <h1>BUNA</h1>
+    <p class="hero-tag">Coffee · Food · Tea · Fresh Drinks</p>
+    <a class="hero-cta" href="#favorites">Explore the menu <span class="arrow" aria-hidden="true">↓</span></a>
+  </div>
+  <p class="hero-note">Scan · Explore · Order</p>
+</section>
+
+<!-- CATEGORY NAV -->
+<nav class="catnav" aria-label="Menu categories">
+  <div class="catnav-track" id="catnav-track"></div>
+</nav>
+
+<main>
+
+  <!-- FAVORITES -->
+  <section class="section" id="favorites">
+    <p class="section-kicker reveal">Loved by regulars</p>
+    <div class="section-head reveal">
+      <h2 class="section-title">BUNA Favorites</h2>
+      <span class="count">← swipe →</span>
+    </div>
+    <p class="swipe-hint reveal"><span class="line"></span> Swipe to explore <span class="line"></span></p>
+    <div class="carousel" id="fav-cards"></div>
+  </section>
+
+  <!-- COFFEE (dark editorial) -->
+  <section class="dark section" id="coffee">
+    <div class="dark-split">
+      <div>
+        <p class="section-kicker reveal">Start with something classic</p>
+        <div class="section-head reveal">
+          <h2 class="section-title">Coffee</h2>
+          <span class="count" id="coffee-count"></span>
+        </div>
+        <p class="section-sub reveal">Single-origin beans, roasted light-to-medium, pulled on a
+        two-group espresso machine. Oat, almond or whole milk — always included.</p>
+        <ul class="menu-list" id="coffee-list"></ul>
+      </div>
+      <figure class="dark-img reveal">
+        <img src="assets/img/final/espresso.jpg" alt="Espresso served in a patterned ceramic cup" loading="lazy" decoding="async">
+      </figure>
+    </div>
+  </section>
+
+  <!-- SIGNATURE -->
+  <section class="section" id="signature">
+    <p class="section-kicker reveal">House originals</p>
+    <div class="section-head reveal">
+      <h2 class="section-title">Discover Something Different</h2>
+    </div>
+    <p class="section-sub reveal">The drinks that made BUNA famous — atypical, creamy and impossible to forget.</p>
+    <div class="banner reveal">
+      <img src="assets/img/final/golden.jpg" alt="Golden turmeric lattes with cinnamon" loading="lazy" decoding="async">
+      <figcaption class="banner-caption"><span>Slow moments</span>Golden hour, in a glass</figcaption>
+    </div>
+    <div class="cards" id="sig-cards"></div>
+  </section>
+
+  <!-- COLD & FRESH -->
+  <section class="section" id="cold">
+    <p class="section-kicker reveal">Iced, pressed, sparkling</p>
+    <div class="section-head reveal">
+      <h2 class="section-title">Cold &amp; Refreshing</h2>
+    </div>
+    <p class="section-sub reveal">Slow-steeped cold brew, iced signatures and juices pressed to order.</p>
+    <div class="cards" id="cold-cards"></div>
+    <ul class="menu-list" style="margin-top:26px" id="cold-list"></ul>
+  </section>
+
+  <!-- FOOD -->
+  <section class="section" id="food">
+    <p class="section-kicker reveal">Kitchen</p>
+    <div class="section-head reveal">
+      <h2 class="section-title">Food</h2>
+    </div>
+    <p class="section-sub reveal">Sourdough from the morning bake, eggs, greens and things worth sitting down for.</p>
+    <div class="cards" id="food-cards"></div>
+    <ul class="menu-list" style="margin-top:26px" id="food-list"></ul>
+  </section>
+
+  <!-- PASTRY -->
+  <section class="section" id="pastry">
+    <p class="section-kicker reveal">From the counter</p>
+    <div class="section-head reveal">
+      <h2 class="section-title">Pastry &amp; Sweets</h2>
+    </div>
+    <p class="section-sub reveal">Laminated over three days, baked every morning, usually gone by noon.</p>
+    <div class="banner reveal">
+      <img src="assets/img/final/pastries.jpg" alt="Basket of fresh croissants, cookies and coffee" loading="lazy" decoding="async">
+      <figcaption class="banner-caption"><span>Morning bake</span>Best before 12:00, honestly</figcaption>
+    </div>
+    <div class="cards" id="pastry-cards"></div>
+    <ul class="menu-list" style="margin-top:26px" id="pastry-list"></ul>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <figure class="about-img reveal">
+      <img src="assets/img/final/latte-art.jpg" alt="Barista pouring latte art" loading="lazy" decoding="async">
+    </figure>
+    <div>
+      <p class="section-kicker reveal">Our story</p>
+      <h2 class="section-title reveal">About BUNA</h2>
+      <p class="section-sub reveal" style="margin-top:22px">[Add your café story here — a warm welcome
+      paragraph about where BUNA comes from, what you believe in, and why the coffee matters.
+      Two or three sentences are plenty.]</p>
+      <p class="about-quote reveal">A good day starts with a good cup.</p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <p class="section-kicker reveal">@buna.cafe</p>
+    <div class="section-head reveal">
+      <h2 class="section-title">A Little BUNA</h2>
+    </div>
+    <div class="gallery reveal">
+      <img src="assets/img/final/matcha.jpg" alt="Matcha latte in ceramic cups" loading="lazy" decoding="async">
+      <img src="assets/img/final/croissant.jpg" alt="Fresh croissants on a tray" loading="lazy" decoding="async">
+      <img src="assets/img/final/ube.jpg" alt="Vibrant ube latte" loading="lazy" decoding="async">
+      <img src="assets/img/final/salmon.jpg" alt="Salmon toast with dill" loading="lazy" decoding="async">
+      <img src="assets/img/final/iced-latte.jpg" alt="Iced latte in glass" loading="lazy" decoding="async">
+      <img src="assets/img/final/cake.jpg" alt="Colorful cake slices" loading="lazy" decoding="async">
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span class="logo">BUNA</span>
+  <p>Coffee · Food · Tea · Fresh Drinks<br>[Street address] · [City]</p>
+  <p class="hours">Open daily · 08:00 — 18:00</p>
+</footer>
+
+<!-- MOBILE BOTTOM BAR -->
+<div class="bottombar" role="navigation" aria-label="Quick actions">
+  <button id="bb-search" aria-label="Search">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg> Search</button>
+  <button id="bb-top" aria-label="Back to top">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 19V5m-7 7 7-7 7 7"/></svg> Top</button>
+</div>
+
+<!-- SEARCH OVERLAY -->
+<div class="search" id="search" role="dialog" aria-label="Search the menu">
+  <div class="search-bar">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5b4f44" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="search-input" type="search" placeholder="Search matcha, croissant, toast…" aria-label="Search menu">
+    <button class="chip" onclick="closeSearch()">Close</button>
+  </div>
+  <div class="search-results" id="search-results"></div>
+</div>
+
+<!-- ITEM MODAL -->
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="modal-sheet" id="modal-sheet"></div>
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
