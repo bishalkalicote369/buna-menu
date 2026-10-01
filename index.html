@@ -1,128 +1,200 @@
-<!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BUNA · Coffee, Food, Tea &amp; Fresh Drinks</title>
-<meta name="description" content="The BUNA menu: specialty coffee, food, tea and fresh drinks.">
-<meta property="og:title" content="BUNA"><meta property="og:description" content="Coffee · Food · Tea · Fresh Drinks"><meta property="og:image" content="/images/hero.webp">
-<meta name="theme-color" content="#2b1b13">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"BUNA","servesCuisine":"Coffee, Tea, Brunch","hasMenu":"/"}</script>
-<style>
-:root{--espresso:#2b1b13;--crema:#f6eee2;--paper:#fbf7f0;--latte:#c9a77f;--ink:#3a2a20;--muted:#7d6b5c;--line:#e3d5c2;--serif:"Cormorant Garamond",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif}
-*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:64px}
-body{font:400 16px/1.6 var(--sans);color:var(--ink);background:var(--paper);-webkit-tap-highlight-color:transparent}
-:focus-visible{outline:2px solid var(--espresso);outline-offset:3px}
-h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05}
-.ph{position:relative;overflow:hidden;background:radial-gradient(circle at 30% 25%,var(--c1,#d9bd98),var(--c2,#8a5c3b));display:grid;place-items:center}
-.ph svg{width:34%;max-width:120px;opacity:.55}
-.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s}
-.ph.dark{--c1:#5a3a28;--c2:#1f130d}.ph.sage{--c1:#c9c8a0;--c2:#6f7a52}.ph.rose{--c1:#e8c6bd;--c2:#b4786b}.ph.ube{--c1:#c3a6d8;--c2:#6c4a93}
-/* hero */
-.hero{position:relative;min-height:78svh;color:var(--crema);display:flex;flex-direction:column;justify-content:flex-end;padding:0 24px 56px}
-.hero .ph{position:absolute;inset:0;z-index:-1}.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(31,19,13,.85),rgba(31,19,13,.25))}
-.hero h1{font-size:clamp(5rem,22vw,13rem);letter-spacing:.06em;animation:rise 1.2s both}
-.hero p{font-size:1.05rem;letter-spacing:.14em;margin:.4rem 0 2rem;animation:rise 1.2s .25s both}
-.cta{align-self:flex-start;color:var(--crema);border:1px solid var(--crema);padding:.9rem 1.6rem;border-radius:99px;text-decoration:none;transition:.25s;animation:rise 1.2s .5s both}
-.cta:hover,.cta:active{background:var(--crema);color:var(--espresso)}
-@keyframes rise{from{opacity:0;transform:translateY(18px)}}
-/* nav */
-nav{position:sticky;top:0;z-index:20;background:rgba(251,247,240,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);display:flex;gap:6px;align-items:center;padding:8px 16px;overflow-x:auto;scrollbar-width:none}
-nav::-webkit-scrollbar{display:none}
-nav a,nav button{flex:none;font:500 .9rem var(--sans);color:var(--muted);text-decoration:none;padding:.55rem 1rem;border-radius:99px;border:0;background:none;min-height:44px;display:grid;place-items:center;cursor:pointer}
-nav a.on{background:var(--espresso);color:var(--crema)}
-.search{margin-left:auto;position:relative}
-.search input{font:inherit;border:1px solid var(--line);border-radius:99px;padding:.6rem 1rem;width:150px;background:#fff;min-height:44px}
-/* sections */
-main{max-width:1180px;margin:auto;padding:0 20px}
-section{padding:72px 0 24px}
-.head{margin-bottom:28px}.head h2{font-size:clamp(2.6rem,8vw,5rem)}.head p{color:var(--muted);font-style:italic;font-family:var(--serif);font-size:1.3rem}
-.banner{aspect-ratio:16/9;border-radius:6px;margin-bottom:32px}
-.list{display:grid;gap:0 56px;grid-template-columns:1fr}
-.row{display:flex;gap:12px;align-items:baseline;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);padding:16px 2px;font:inherit;color:inherit;cursor:pointer;min-height:56px;transition:padding .25s}
-.row:hover{padding-left:10px}.row b{font-weight:500;letter-spacing:.04em;text-transform:uppercase;font-size:.95rem}
-.row i{flex:1;border-bottom:1px dotted var(--latte);transform:translateY(-4px)}
-.row small{display:block;color:var(--muted);font-size:.85rem}
-.cards{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 0 20px;scrollbar-width:none}
-.card{flex:0 0 72%;scroll-snap-align:start;background:none;border:0;text-align:left;font:inherit;color:inherit;cursor:pointer}
-.card .ph{aspect-ratio:4/5;border-radius:6px;margin-bottom:12px}.card:hover img,.card:hover .ph svg{transform:scale(1.05)}
-.card:active{transform:scale(.98)}.card h3{font-size:1.7rem;display:flex;justify-content:space-between;gap:8px}.card p{color:var(--muted);font-size:.9rem}
-.swipe{color:var(--muted);font-size:.85rem;margin-bottom:8px}
-.dark-sec{background:var(--espresso);color:var(--crema);margin:72px 0 0;padding:1px 0}.dark-sec .head p,.dark-sec .card p{color:var(--latte)}
-.dark-sec section{padding-top:64px}
-.about{background:var(--crema);padding:72px 20px;text-align:center}.about h2{font-size:3rem}.about p{max-width:52ch;margin:16px auto 0;color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:32px 0 80px}.grid .ph{aspect-ratio:1}.grid .ph:nth-child(2),.grid .ph:nth-child(6){aspect-ratio:3/4;grid-row:span 1}
-footer{text-align:center;padding:40px 20px 96px;color:var(--muted);font-size:.85rem}
-/* modal */
-dialog{border:0;border-radius:14px 14px 0 0;padding:0;width:min(560px,100%);max-width:100%;margin:auto auto 0;background:var(--paper);color:var(--ink);overflow:hidden}
-dialog::backdrop{background:rgba(31,19,13,.6)}dialog[open]{animation:up .35s cubic-bezier(.2,.8,.2,1)}
-@keyframes up{from{transform:translateY(40px);opacity:0}}
-dialog .ph{aspect-ratio:4/3}dialog .in{padding:24px}dialog h3{font-size:2.2rem;display:flex;justify-content:space-between;gap:12px}
-dialog ul{padding-left:1.1rem;color:var(--muted);margin-top:10px}.x{position:absolute;top:10px;right:10px;z-index:2;width:44px;height:44px;border-radius:50%;border:0;background:rgba(251,247,240,.9);font-size:1.3rem;cursor:pointer}
-.fab{position:fixed;right:16px;bottom:16px;z-index:15;background:var(--espresso);color:var(--crema);border:0;border-radius:99px;padding:.9rem 1.3rem;font:500 .9rem var(--sans);cursor:pointer;opacity:0;pointer-events:none;transition:.3s}.fab.show{opacity:1;pointer-events:auto}
-.rv{opacity:0;transform:translateY(16px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
-@media(min-width:760px){.list{grid-template-columns:1fr 1fr}.card{flex-basis:30%}.hero{min-height:92svh;padding:0 6vw 80px}main{padding:0 40px}
-.banner{aspect-ratio:21/8;width:calc(100% + 12vw);margin-left:-6vw;border-radius:0}dialog{margin:auto;border-radius:14px}.grid{gap:14px}.search input{width:220px}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
-</style></head><body>
-<header class="hero"><div class="ph dark" data-img="hero"></div><h1>BUNA</h1><p>Coffee · Food · Tea · Fresh Drinks</p><a class="cta" href="#coffee">Explore the menu ↓</a></header>
-<nav id="nav" aria-label="Menu categories"></nav>
-<main id="menu"></main>
-<div class="about"><h2>About BUNA</h2><p>[Add your café story here]</p></div>
-<main><section style="padding-bottom:0"><div class="head rv"><h2>A little BUNA</h2></div><div class="grid" id="grid"></div></section></main>
-<footer>BUNA · [Address] · [Opening hours] · [Instagram]</footer>
-<button class="fab" id="top" aria-label="Back to top">↑ Menu</button>
-<dialog id="dlg" aria-label="Item details"></dialog>
-<script>
-// ===== EDIT YOUR MENU HERE. img = file name in /images (without .webp). price/desc/opts optional. =====
-const MENU=[
-{id:"coffee",title:"Coffee",sub:"Start with something classic.",img:"coffee",tone:"dark",items:[
-{n:"Espresso",p:2.5,img:"espresso"},{n:"Americano",p:3.5,img:"americano"},{n:"Flat White",p:4.5,img:"flat-white"},{n:"Cappuccino",img:"cappuccino"},{n:"Latte",img:"latte"}]},
-{id:"different",title:"Discover something different",nav:"Different",dark:1,tone:"ube",items:[
-{n:"Ube Latte",p:5.5,d:"Atypical · creamy · vibrant",img:"ube-latte",tone:"ube",feat:1},{n:"Matcha Latte",img:"matcha",tone:"sage",feat:1},{n:"Golden Latte",img:"golden-latte",feat:1},{n:"Honeychino",img:"honeychino",feat:1}]},
-{id:"cold",title:"Cold & refreshing",nav:"Cold",tone:"sage",items:[
-{n:"Iced Coffee",img:"iced-coffee"},{n:"Iced Matcha",img:"iced-matcha",tone:"sage"},{n:"Fresh Juices",img:"juices",tone:"rose"}]},
-{id:"food",title:"Food",sub:"Made to go with the coffee.",img:"food",tone:"rose",items:[
-{n:"Croissant",img:"croissant",feat:1},{n:"Avocado Toast",img:"avocado-toast",tone:"sage",feat:1},{n:"Salmon Toast",img:"salmon-toast",tone:"rose",feat:1},{n:"Pancakes",img:"pancakes"},{n:"Sandwiches",img:"sandwiches"},{n:"Salads",img:"salads",tone:"sage"},{n:"Cakes",img:"cakes",tone:"rose"}]}
-];
-const GALLERY=["gallery-1","gallery-2","gallery-3","gallery-4","gallery-5","gallery-6"];
-// ===== end of menu data =====
-// Verified Unsplash photos (free under the Unsplash License). Add more: "file-name":"PHOTO_ID" (the last part of an unsplash.com/photos/... URL)
-const REMOTE={hero:"KWZ-rg9o76A",espresso:"KWZ-rg9o76A",coffee:"ZWSezHXJDXs",latte:"ZWSezHXJDXs"};
-const ru=(k,w)=>REMOTE[k]?`https://unsplash.com/photos/${REMOTE[k]}/download?w=${w}`:"";
-function imgErr(el){const k=el.dataset.k;if(!el.dataset.t&&REMOTE[k]){el.dataset.t=1;el.src=ru(k,el.dataset.w)}else el.remove()}
-const $=(s,r=document)=>r.querySelector(s),cup='<svg viewBox="0 0 64 64" fill="none" stroke="#fbf7f0" stroke-width="2.5" aria-hidden="true"><path d="M10 22h38v14a16 16 0 0 1-16 16h-6A16 16 0 0 1 10 36zM48 26h4a6 6 0 0 1 0 12h-5M22 8c-3 3 3 5 0 9M32 8c-3 3 3 5 0 9"/></svg>';
-const eur=p=>p==null?"":"€"+p.toFixed(2);
-const ph=(img,tone,alt="",lazy=1)=>`<div class="ph ${tone||""}">${cup}<img src="images/${img}.webp" data-k="${img}" data-w="900" alt="${alt}" ${lazy?'loading="lazy"':'fetchpriority="high"'} decoding="async" onerror="imgErr(this)"></div>`;
-const hero=$('[data-img=hero]');hero.innerHTML=cup+'<img src="images/hero.webp" data-k="hero" data-w="1600" alt="" fetchpriority="high" onerror="imgErr(this)">';
-const all=[];let html="",nav="";
-MENU.forEach(c=>{
- nav+=`<a href="#${c.id}">${c.nav||c.title}</a>`;
- const feats=c.items.filter(i=>i.feat),plain=c.items.filter(i=>!i.feat);
- let s=`<section id="${c.id}"><div class="head rv"><h2>${c.title}</h2>${c.sub?`<p>${c.sub}</p>`:""}</div>`;
- if(c.img)s+=`<div class="banner rv">${ph(c.img,c.tone)}</div>`;
- if(feats.length)s+=`<p class="swipe">← swipe →</p><div class="cards rv">${feats.map(i=>{all.push(i);return`<button class="card" data-i="${all.length-1}">${ph(i.img,i.tone||c.tone,i.n)}<h3>${i.n}<span>${eur(i.p)}</span></h3><p>${i.d||""}</p></button>`}).join("")}</div>`;
- if(plain.length)s+=`<div class="list rv">${plain.map(i=>{all.push(i);return`<button class="row" data-i="${all.length-1}" data-s="${i.n.toLowerCase()}"><b>${i.n}</b><i></i><span>${eur(i.p)}</span></button>`}).join("")}</div>`;
- html+=c.dark?`</main><div class="dark-sec"><main>${s}</section></main></div><main>`:s+"</section>";
-});
-$("#menu").innerHTML=html;
-$("#nav").innerHTML=nav+'<label class="search"><input id="q" type="search" placeholder="Search the menu" aria-label="Search the menu"></label>';
-$("#grid").innerHTML=GALLERY.map((g,i)=>ph(g,["dark","","rose","sage","ube","dark"][i],"")).join("");
-// modal
-const dlg=$("#dlg");
-document.addEventListener("click",e=>{const b=e.target.closest("[data-i]");if(b){const i=all[b.dataset.i];
- dlg.innerHTML=`<button class="x" aria-label="Close" onclick="dlg.close()">×</button>${ph(i.img,i.tone,i.n)}<div class="in"><h3>${i.n}<span>${eur(i.p)}</span></h3>${i.d?`<p>${i.d}</p>`:""}${i.opts?`<ul>${i.opts.map(o=>`<li>${o}</li>`).join("")}</ul>`:""}</div>`;dlg.showModal()}
- else if(e.target===dlg)dlg.close()});
-// search
-$("#q").addEventListener("input",e=>{const v=e.target.value.trim().toLowerCase();
- document.querySelectorAll("[data-i]").forEach(b=>{const n=all[b.dataset.i].n.toLowerCase();b.style.display=!v||n.includes(v)?"":"none"})});
-// active nav + reveal + fab
-const links=[...document.querySelectorAll("#nav a")];
-new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>{a.classList.toggle("on",a.hash==="#"+e.target.id);if(a.classList.contains("on"))a.scrollIntoView({inline:"center",block:"nearest"})})}),{rootMargin:"-40% 0px -55% 0px"}).observe&&0;
-const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle("on",a.hash==="#"+e.target.id));$("#nav a.on")?.scrollIntoView({inline:"center",block:"nearest"})}}),{rootMargin:"-40% 0px -55% 0px"});
-MENU.forEach(c=>spy.observe($("#"+c.id)));
-const rv=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");rv.unobserve(e.target)}}),{threshold:.1});
-document.querySelectorAll(".rv").forEach(el=>rv.observe(el));
-const fab=$("#top");addEventListener("scroll",()=>fab.classList.toggle("show",scrollY>innerHeight),{passive:true});
-fab.onclick=()=>$("#nav").scrollIntoView();
-</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BUNA — Coffee · Food · Tea · Fresh Drinks</title>
+<meta name="description" content="BUNA is a specialty café. Espresso, signature lattes, fresh food and pastries — explore the menu.">
+<meta property="og:title" content="BUNA — Coffee · Food · Tea · Fresh Drinks">
+<meta property="og:description" content="Specialty coffee, signature drinks and fresh food.">
+<meta property="og:image" content="assets/img/final/hero.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%232b211b'/%3E%3Ctext x='50' y='66' font-family='Georgia' font-size='52' fill='%23f6f1e8' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="preload" as="image" href="assets/img/final/hero.jpg" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"BUNA",
+ "servesCuisine":"Coffee, Brunch, Pastry","priceRange":"€"}
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="logo" href="#top" aria-label="BUNA home">BUNA</a>
+  <div class="topbar-right">
+    <button class="icon-btn" aria-label="Search menu" onclick="openSearch()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <img class="hero-img" src="assets/img/final/hero.jpg"
+       alt="Espresso in a hand-painted ceramic cup on a wooden table" fetchpriority="high">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Specialty Café</p>
+    <h1>BUNA</h1>
+    <p class="hero-tag">Coffee · Food · Tea · Fresh Drinks</p>
+    <a class="hero-cta" href="#favorites">Explore the menu <span class="arrow" aria-hidden="true">↓</span></a>
+  </div>
+  <p class="hero-note">Scan · Explore · Order</p>
+</section>
+
+<!-- CATEGORY NAV -->
+<nav class="catnav" aria-label="Menu categories">
+  <div class="catnav-track" id="catnav-track"></div>
+</nav>
+
+<main>
+
+  <!-- FAVORITES -->
+  <section class="section" id="favorites">
+    <p class="section-kicker reveal">Loved by regulars</p>
+    <div class="section-head reveal">
+      <h2 class="section-title">BUNA Favorites</h2>
+      <span class="count">← swipe →</span>
+    </div>
+    <p class="swipe-hint reveal"><span class="line"></span> Swipe to explore <span class="line"></span></p>
+    <div class="carousel" id="fav-cards"></div>
+  </section>
+
+  <!-- COFFEE (dark editorial) -->
+  <section class="dark section" id="coffee">
+    <div class="dark-split">
+      <div>
+        <p class="section-kicker reveal">Start with something classic</p>
+        <div class="section-head reveal">
+          <h2 class="section-title">Coffee</h2>
+          <span class="count" id="coffee-count"></span>
+        </div>
+        <p class="section-sub reveal">Single-origin beans, roasted light-to-medium, pulled on a
+        two-group espresso machine. Oat, almond or whole milk — always included.</p>
+        <ul class="menu-list" id="coffee-list"></ul>
+      </div>
+      <figure class="dark-img reveal">
+        <img src="assets/img/final/espresso.jpg" alt="Espresso served in a patterned ceramic cup" loading="lazy" decoding="async">
+      </figure>
+    </div>
+  </section>
+
+  <!-- SIGNATURE -->
+  <section class="section" id="signature">
+    <p class="section-kicker reveal">House originals</p>
+    <div class="section-head reveal">
+      <h2 class="section-title">Discover Something Different</h2>
+    </div>
+    <p class="section-sub reveal">The drinks that made BUNA famous — atypical, creamy and impossible to forget.</p>
+    <div class="banner reveal">
+      <img src="assets/img/final/golden.jpg" alt="Golden turmeric lattes with cinnamon" loading="lazy" decoding="async">
+      <figcaption class="banner-caption"><span>Slow moments</span>Golden hour, in a glass</figcaption>
+    </div>
+    <div class="cards" id="sig-cards"></div>
+  </section>
+
+  <!-- COLD & FRESH -->
+  <section class="section" id="cold">
+    <p class="section-kicker reveal">Iced, pressed, sparkling</p>
+    <div class="section-head reveal">
+      <h2 class="section-title">Cold &amp; Refreshing</h2>
+    </div>
+    <p class="section-sub reveal">Slow-steeped cold brew, iced signatures and juices pressed to order.</p>
+    <div class="cards" id="cold-cards"></div>
+    <ul class="menu-list" style="margin-top:26px" id="cold-list"></ul>
+  </section>
+
+  <!-- FOOD -->
+  <section class="section" id="food">
+    <p class="section-kicker reveal">Kitchen</p>
+    <div class="section-head reveal">
+      <h2 class="section-title">Food</h2>
+    </div>
+    <p class="section-sub reveal">Sourdough from the morning bake, eggs, greens and things worth sitting down for.</p>
+    <div class="cards" id="food-cards"></div>
+    <ul class="menu-list" style="margin-top:26px" id="food-list"></ul>
+  </section>
+
+  <!-- PASTRY -->
+  <section class="section" id="pastry">
+    <p class="section-kicker reveal">From the counter</p>
+    <div class="section-head reveal">
+      <h2 class="section-title">Pastry &amp; Sweets</h2>
+    </div>
+    <p class="section-sub reveal">Laminated over three days, baked every morning, usually gone by noon.</p>
+    <div class="banner reveal">
+      <img src="assets/img/final/pastries.jpg" alt="Basket of fresh croissants, cookies and coffee" loading="lazy" decoding="async">
+      <figcaption class="banner-caption"><span>Morning bake</span>Best before 12:00, honestly</figcaption>
+    </div>
+    <div class="cards" id="pastry-cards"></div>
+    <ul class="menu-list" style="margin-top:26px" id="pastry-list"></ul>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <figure class="about-img reveal">
+      <img src="assets/img/final/latte-art.jpg" alt="Barista pouring latte art" loading="lazy" decoding="async">
+    </figure>
+    <div>
+      <p class="section-kicker reveal">Our story</p>
+      <h2 class="section-title reveal">About BUNA</h2>
+      <p class="section-sub reveal" style="margin-top:22px">[Add your café story here — a warm welcome
+      paragraph about where BUNA comes from, what you believe in, and why the coffee matters.
+      Two or three sentences are plenty.]</p>
+      <p class="about-quote reveal">A good day starts with a good cup.</p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <p class="section-kicker reveal">@buna.cafe</p>
+    <div class="section-head reveal">
+      <h2 class="section-title">A Little BUNA</h2>
+    </div>
+    <div class="gallery reveal">
+      <img src="assets/img/final/matcha.jpg" alt="Matcha latte in ceramic cups" loading="lazy" decoding="async">
+      <img src="assets/img/final/croissant.jpg" alt="Fresh croissants on a tray" loading="lazy" decoding="async">
+      <img src="assets/img/final/ube.jpg" alt="Vibrant ube latte" loading="lazy" decoding="async">
+      <img src="assets/img/final/salmon.jpg" alt="Salmon toast with dill" loading="lazy" decoding="async">
+      <img src="assets/img/final/iced-latte.jpg" alt="Iced latte in glass" loading="lazy" decoding="async">
+      <img src="assets/img/final/cake.jpg" alt="Colorful cake slices" loading="lazy" decoding="async">
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span class="logo">BUNA</span>
+  <p>Coffee · Food · Tea · Fresh Drinks<br>[Street address] · [City]</p>
+  <p class="hours">Open daily · 08:00 — 18:00</p>
+</footer>
+
+<!-- MOBILE BOTTOM BAR -->
+<div class="bottombar" role="navigation" aria-label="Quick actions">
+  <button id="bb-search" aria-label="Search">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg> Search</button>
+  <button id="bb-top" aria-label="Back to top">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 19V5m-7 7 7-7 7 7"/></svg> Top</button>
+</div>
+
+<!-- SEARCH OVERLAY -->
+<div class="search" id="search" role="dialog" aria-label="Search the menu">
+  <div class="search-bar">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5b4f44" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="search-input" type="search" placeholder="Search matcha, croissant, toast…" aria-label="Search menu">
+    <button class="chip" onclick="closeSearch()">Close</button>
+  </div>
+  <div class="search-results" id="search-results"></div>
+</div>
+
+<!-- ITEM MODAL -->
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="modal-sheet" id="modal-sheet"></div>
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
